@@ -1,0 +1,13 @@
+jxrory:
+  redis:
+    ip: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+
+spring:
+  redis:
+    host: ${jxrory.redis.ip}
+    password: ${jxrory.redis.password}
+    port: ${jxrory.redis.port}
+    database: ${jxrory.redis.database}
