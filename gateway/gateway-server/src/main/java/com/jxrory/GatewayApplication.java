@@ -1,4 +1,4 @@
-package com.jxrory.gateway;
+package com.jxrory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

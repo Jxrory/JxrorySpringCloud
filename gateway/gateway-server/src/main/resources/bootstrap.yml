@@ -16,11 +16,6 @@ spring:
         server-addr: ${jxrory.nacos.ip}:${jxrory.nacos.port}
         file-extension: yml
         namespace: ${jxrory.nacos.namespace}
-        username: ${jxrory.nacos.username}
-        password: ${jxrory.nacos.password}
       discovery:
         server-addr: ${jxrory.nacos.ip}:${jxrory.nacos.port}
         namespace: ${jxrory.nacos.namespace}
-        username: ${jxrory.nacos.username}
-        password: ${jxrory.nacos.password}
-

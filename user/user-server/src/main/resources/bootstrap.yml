@@ -3,6 +3,7 @@ jxrory:
     ip: @nacos.ip@
     port: @nacos.port@
     namespace: @nacos.namespace@
+    username: @nacos.username@
     password: @nacos.password@
 
 spring:
@@ -19,10 +20,6 @@ spring:
         shared-configs:
           - dataId: mysql.yml
             refresh: true
-        username: ${jxrory.nacos.username}
-        password: ${jxrory.nacos.password}
       discovery:
         server-addr: ${jxrory.nacos.ip}:${jxrory.nacos.port}
         namespace: ${jxrory.nacos.namespace}
-        username: ${jxrory.nacos.username}
-        password: ${jxrory.nacos.password}
