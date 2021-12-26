@@ -94,6 +94,11 @@
             <!-- 系统内部的包 -->
             <dependency>
                 <groupId>com.jxrory</groupId>
+                <artifactId>user-api</artifactId>
+                <version>${jxrory-user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
                 <artifactId>user-entity</artifactId>
                 <version>${jxrory-user.version}</version>
             </dependency>

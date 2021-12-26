@@ -1,20 +1,19 @@
 package com.jxrory;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author jxrory
+ * @date 2021/12/26 下午11:51
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan({"com.jxrory.user.mapper"})
-public class UserServerApplication {
+public class OrderServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServerApplication.class, args);
+        SpringApplication.run(OrderServerApplication.class, args);
     }
 
 }

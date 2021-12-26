@@ -1,6 +1,7 @@
 package com.jxrory.user.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jxrory.user.api.impl.UserApiImpl;
 import com.jxrory.user.entity.User;
 import com.jxrory.user.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.Serializable;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * <p>
@@ -24,11 +28,16 @@ import javax.annotation.Resource;
 @RequestMapping("/user")
 public class UserController {
 
-    @Value("${spring.datasource.url}")
-    private String mysqlUrl;
-
     @Resource
     private IUserService iUserService;
+
+    @Resource
+    private UserApiImpl userApi;
+
+    @GetMapping(value = "/all")
+    public ResponseEntity<Map<Serializable, Object>> findAll(@RequestParam(required = false) Set<Serializable> ids) {
+        return new ResponseEntity<>(userApi.findUserByIds(ids), HttpStatus.OK);
+    }
 
     @GetMapping(value = "/")
     public ResponseEntity<Page<User>> list(@RequestParam(required = false) Integer current, @RequestParam(required = false) Integer pageSize) {
@@ -38,7 +47,6 @@ public class UserController {
         if (pageSize == null) {
             pageSize = 10;
         }
-        log.info("mysqlUrl={}", mysqlUrl);
         Page<User> aPage = iUserService.page(new Page<>(current, pageSize));
         return new ResponseEntity<>(aPage, HttpStatus.OK);
     }

@@ -12,9 +12,20 @@
   <description>用户微服务Api</description>
 
   <dependencies>
+    <!-- Production Ready features -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Dubbo Spring Cloud Starter -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-dubbo</artifactId>
     </dependency>
 
     <dependency>
@@ -32,18 +43,13 @@
 
     <dependency>
       <groupId>com.jxrory</groupId>
-      <artifactId>user-entity</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <version>1.64</version>
+      <artifactId>user-api</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt</artifactId>
+      <groupId>com.jxrory</groupId>
+      <artifactId>user-entity</artifactId>
     </dependency>
   </dependencies>
 </project>

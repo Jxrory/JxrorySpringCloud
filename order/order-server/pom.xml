@@ -9,9 +9,9 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>user-server</artifactId>
+  <artifactId>order-server</artifactId>
   <name>${project.artifactId}</name>
-  <description>用户微服务</description>
+  <description>订单微服务</description>
 
   <dependencies>
     <dependency>
@@ -48,6 +48,7 @@
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-dubbo</artifactId>
@@ -57,19 +58,7 @@
     <!-- 自己开发的 -->
     <dependency>
       <groupId>com.jxrory</groupId>
-      <artifactId>user-entity</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.jxrory</groupId>
-      <artifactId>user-biz</artifactId>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.github.davidfantasy</groupId>
-      <artifactId>mybatis-plus-generator-ui</artifactId>
-      <version>1.4.3</version>
-      <scope>test</scope>
+      <artifactId>user-api</artifactId>
     </dependency>
   </dependencies>
 
