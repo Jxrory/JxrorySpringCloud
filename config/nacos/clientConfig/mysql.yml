@@ -8,7 +8,7 @@ jxrory:
     database: jxrory_cloud
     username: root
     password: c9ReTv4T96SGcVe
-    url: jdbc:mysql://${jxrory.mysql.ip}:${jxrory.mysql.port}/${jxrory.mysql.database}?serverTimezone=CTT&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://${jxrory.mysql.ip}:${jxrory.mysql.port}/${jxrory.mysql.database}?characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
 
 # mysql 通用配置
 spring:
