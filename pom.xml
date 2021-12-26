@@ -13,7 +13,7 @@
 
     <modules>
         <module>gateway</module>
-<!--        <module>user</module>-->
+        <module>user</module>
     </modules>
 
     <properties>
@@ -32,6 +32,9 @@
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <spring-boot-maven-plugin.version>2.2.6.RELEASE</spring-boot-maven-plugin.version>
+
+        <!-- 系统内部的包 -->
+        <jxrory-user.version>0.0.1-SNAPSHOT</jxrory-user.version>
     </properties>
 
     <dependencyManagement>
@@ -57,6 +60,47 @@
                 <version>2.2.7.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- 数据库插件 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>3.4.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.68</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.4.6</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+
+
+            <!-- 系统内部的包 -->
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>user-entity</artifactId>
+                <version>${jxrory-user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>user-biz</artifactId>
+                <version>${jxrory-user.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
