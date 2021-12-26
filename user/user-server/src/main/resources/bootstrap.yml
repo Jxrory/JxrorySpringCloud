@@ -15,11 +15,18 @@ spring:
     nacos:
       config:
         server-addr: ${jxrory.nacos.ip}:${jxrory.nacos.port}
-        file-extension: yml
         namespace: ${jxrory.nacos.namespace}
+        file-extension: yml
+        timeout: 3000
         shared-configs:
           - dataId: mysql.yml
+            refresh: true
+          - dataId: redis.yml
             refresh: true
       discovery:
         server-addr: ${jxrory.nacos.ip}:${jxrory.nacos.port}
         namespace: ${jxrory.nacos.namespace}
+
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
