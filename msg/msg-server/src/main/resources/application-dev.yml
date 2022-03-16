@@ -1,0 +1,19 @@
+spring:
+  ## mail 模块
+  mail:
+    host: mail.mcatrading.net # SMTP 服务器地址
+    port: 465
+    username: service # 登陆账号
+    password: service@2022 # 登陆密码（或授权码）
+    test-connection: true
+    properties:
+      from: service@mcatrading.net
+      mail:
+        smtp:
+          auth: true
+          timeout: 50000
+          starttls.enable: true
+          starttls.required: true
+          socketFactory.port: 465
+          ocketFactory.class: javax.net.ssl.SSLSocketFactory
+          socketFactory.fallback: false

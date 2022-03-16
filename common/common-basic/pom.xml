@@ -8,9 +8,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common-utils</artifactId>
+    <artifactId>common-basic</artifactId>
     <name>${project.artifactId}</name>
-    <description>通用工具类</description>
+    <description>common basic</description>
 
     <dependencies>
         <dependency>
@@ -36,12 +36,6 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <!-- NetworkUtils 获取 Ip 地址 -->
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,0 +1,14 @@
+server:
+  port: 6741 # 九宫格: msg-server -> [msg1] 6741
+
+spring:
+  application:
+    name: msg-server
+  profiles:
+    active: @profile.active@
+
+# 日志配置
+log:
+  file:
+    # 日志存储根目录
+    path: ./logs

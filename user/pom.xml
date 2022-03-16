@@ -13,7 +13,9 @@
     <artifactId>user</artifactId>
     <name>${project.artifactId}</name>
     <description>用户微服务</description>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
 
     <modules>
         <module>user-entity</module>
@@ -21,5 +23,4 @@
         <module>user-biz</module>
         <module>user-server</module>
     </modules>
-
 </project>

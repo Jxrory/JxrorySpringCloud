@@ -33,6 +33,8 @@
 
         <!-- 内部开发的包 -->
         <jxrory-user.version>0.0.1-SNAPSHOT</jxrory-user.version>
+        <jxrory-msg.version>0.0.1-SNAPSHOT</jxrory-msg.version>
+        <jxrory-common.version>0.0.1-SNAPSHOT</jxrory-common.version>
     </properties>
 
     <dependencyManagement>
@@ -129,6 +131,25 @@
             <!-- 公司内部包 -->
             <dependency>
                 <groupId>com.jxrory</groupId>
+                <artifactId>common</artifactId>
+                <version>${jxrory-common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>common-basic</artifactId>
+                <version>${jxrory-common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>user</artifactId>
+                <version>${jxrory-user.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
                 <artifactId>user-api</artifactId>
                 <version>${jxrory-user.version}</version>
                 <scope>compile</scope>
@@ -143,6 +164,19 @@
                 <groupId>com.jxrory</groupId>
                 <artifactId>user-biz</artifactId>
                 <version>${jxrory-user.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>msg</artifactId>
+                <version>${jxrory-msg.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>msg-biz</artifactId>
+                <version>${jxrory-msg.version}</version>
                 <scope>compile</scope>
             </dependency>
         </dependencies>

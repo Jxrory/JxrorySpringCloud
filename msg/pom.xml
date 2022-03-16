@@ -10,14 +10,15 @@
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>common</artifactId>
+    <artifactId>msg</artifactId>
     <name>${project.artifactId}</name>
-    <description>通用工具和服务</description>
+    <description>消息微服务</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>common-basic</module>
-        <module>common-utils</module>
-        <module>common-validation</module>
+        <module>msg-entity</module>
+        <module>msg-api</module>
+        <module>msg-biz</module>
+        <module>msg-server</module>
     </modules>
 </project>
