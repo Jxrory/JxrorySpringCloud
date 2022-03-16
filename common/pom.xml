@@ -10,16 +10,13 @@
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>user</artifactId>
+    <artifactId>common</artifactId>
     <name>${project.artifactId}</name>
-    <description>用户微服务</description>
+    <description>通用工具和服务</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>user-entity</module>
-        <module>user-api</module>
-        <module>user-biz</module>
-        <module>user-server</module>
+        <module>common-utils</module>
+        <module>common-validation</module>
     </modules>
-
 </project>
