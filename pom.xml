@@ -24,5 +24,6 @@
         <module>user</module>
         <module>order</module>
         <module>msg</module>
+        <module>payment</module>
     </modules>
 </project>
