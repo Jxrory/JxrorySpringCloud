@@ -40,14 +40,15 @@ public class NetworkUtils {
 
         for (String headerStr : IP_HEADERS) {
             ip = request.getHeader(headerStr);
-            if (StringUtils.isNotBlank(ip) || UNKNOWN_STR.equalsIgnoreCase(ip)) {
-                log.info("getIpAddress(HttpServletRequest) - {} - String ip={}", headerStr, ip);
+            if (StringUtils.isNotBlank(ip) && !UNKNOWN_STR.equalsIgnoreCase(ip)) {
+                log.debug("getIpAddress(HttpServletRequest) - {} - String ip={}", headerStr, ip);
                 break;
             }
         }
 
-        if (StringUtils.isNotBlank(ip) || UNKNOWN_STR.equalsIgnoreCase(ip)) {
+        if (StringUtils.isBlank(ip) || UNKNOWN_STR.equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
+            log.debug("getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=" + ip);
             if (LOCAL_LOOP_IP.equals(ip)) {
                 // 根据网卡取本机配置的IP
                 InetAddress inet = null;
@@ -58,7 +59,6 @@ public class NetworkUtils {
                     log.warn("getIpAddress InetAddress.getLocalHost() error={}", e.getMessage());
                 }
             }
-            log.info("getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=" + ip);
         }
 
         if (ip.length() > SINGLE_IP_MAX_LENGTH) {
