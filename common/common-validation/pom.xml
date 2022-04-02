@@ -42,5 +42,11 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
         </dependency>
+
+        <!-- 内部包 -->
+        <dependency>
+            <groupId>com.jxrory</groupId>
+            <artifactId>common-basic</artifactId>
+        </dependency>
     </dependencies>
 </project>

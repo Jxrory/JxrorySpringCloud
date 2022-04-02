@@ -1,6 +1,7 @@
-package com.jxrory.common.utils;
+package com.jxrory.common.context;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -12,6 +13,10 @@ import java.util.Map;
 public class UserContext {
 
     private static ThreadLocal<Map<String, Object>> threadLocal;
+
+    static {
+        threadLocal = new ThreadLocal<>();
+    }
 
     /**
      * tokenKey
@@ -26,16 +31,8 @@ public class UserContext {
     /**
      * 语言 code
      */
-    public static final String CONTEXT_KEY_LANGUAGE_CODE = "language";
+    public static final String CONTEXT_KEY_LOCALE = "locale";
 
-    /**
-     * 用户信息
-     */
-    public static final String CONTEXT_KEY_USER_INFO = "userInfo";
-
-    static {
-        threadLocal = new ThreadLocal<>();
-    }
 
     /**
      * 设置数据
@@ -75,12 +72,13 @@ public class UserContext {
         threadLocal.remove();
     }
 
+
     /**
      * 设置用户Id
      *
      * @param userId 用户Id
      */
-    public static void setUserId(Long userId) {
+    public static void setUserId(String userId) {
         set(CONTEXT_KEY_USER_ID, userId);
     }
 
@@ -89,46 +87,35 @@ public class UserContext {
      *
      * @return 用户Id
      */
-    public static Long getUserId() {
+    public static String getUserId() {
         Object value = get(CONTEXT_KEY_USER_ID);
-        return Long.valueOf(String.valueOf(value));
-    }
-
-    /**
-     * 设置前端使用的语言Code
-     *
-     * @param languageCode 语言Code, 参考 ISO 标准
-     */
-    public static void setLanguageCode(String languageCode) {
-        set(CONTEXT_KEY_LANGUAGE_CODE, languageCode);
-    }
-
-    /**
-     * 获取语言Code
-     *
-     * @return 语言Code
-     */
-    public static String getLanguageCode() {
-        Object value = get(CONTEXT_KEY_LANGUAGE_CODE);
         return String.valueOf(value);
     }
 
     /**
-     * 保存用户 token
-     *
-     * @param token token
+     * 保存用户Token
      */
     public static void setToken(String token) {
         set(CONTEXT_KEY_USER_TOKEN, token);
     }
 
-    /**
-     * 获取用户 token
-     *
-     * @return 用户token
-     */
     public static String getToken() {
         Object value = get(CONTEXT_KEY_USER_TOKEN);
         return String.valueOf(value);
+    }
+
+    /**
+     * 设置前端用户选择的语言
+     */
+    public static void setLocale(Locale locale) {
+        set(CONTEXT_KEY_LOCALE, locale);
+    }
+
+    public static Locale getLocale() {
+        Object value = get(CONTEXT_KEY_LOCALE);
+        if (value == null) {
+            return Locale.US;
+        }
+        return (Locale) value;
     }
 }

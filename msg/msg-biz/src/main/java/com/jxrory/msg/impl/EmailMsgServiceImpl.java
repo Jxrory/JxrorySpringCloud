@@ -1,6 +1,6 @@
 package com.jxrory.msg.impl;
 
-import com.jxrory.common.api.ApiErrorCode;
+import com.jxrory.common.api.CommonErrorCode;
 import com.jxrory.msg.EmailMsgService;
 import com.jxrory.msg.model.dto.SendCodeRespDto;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +36,6 @@ public class EmailMsgServiceImpl implements EmailMsgService {
         simpleMailMessage.setText(content);
         mailSender.send(simpleMailMessage);
 
-        return new SendCodeRespDto(ApiErrorCode.OK);
+        return new SendCodeRespDto(CommonErrorCode.OK);
     }
 }

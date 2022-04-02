@@ -9,15 +9,20 @@ import lombok.Getter;
  * @date 2022/02/25
  */
 @Getter
-public enum ApiErrorCode implements IErrorCode {
+public enum CommonErrorCode implements IErrorCode {
     // 成功
     OK("000000", "OK"),
 
     /**
      * 错误
      */
+    // 参数校验异常
+    PARAMS_FAILED("E00001", "Parameter validation failed"),
+    // 网络异常
+    NETWORK_ERR("E00002", "Network error"),
+
     // 未知错误
-    FAILED("E00000", "FAILED"),
+    FAILED("E99999", "FAILED"),
     ;
 
     /**
@@ -40,7 +45,7 @@ public enum ApiErrorCode implements IErrorCode {
         return this.msg;
     }
 
-    ApiErrorCode(String code, String msg) {
+    CommonErrorCode(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }

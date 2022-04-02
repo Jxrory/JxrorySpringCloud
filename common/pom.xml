@@ -17,7 +17,6 @@
 
     <modules>
         <module>common-basic</module>
-        <module>common-utils</module>
         <module>common-validation</module>
     </modules>
 </project>

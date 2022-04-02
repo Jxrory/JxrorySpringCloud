@@ -1,6 +1,6 @@
 package com.jxrory.payment.channels.model;
 
-import com.jxrory.common.api.ApiErrorCode;
+import com.jxrory.common.api.CommonErrorCode;
 import com.jxrory.common.api.IErrorCode;
 import lombok.Data;
 
@@ -29,14 +29,14 @@ public class ChannelResult<T> {
     private String originalResp;
 
     public ChannelResult<T> ok(T data, String originalResp) {
-        this.errorCode = ApiErrorCode.OK;
+        this.errorCode = CommonErrorCode.OK;
         this.data = data;
         this.originalResp = originalResp;
         return this;
     }
 
     public ChannelResult<T> failed(String originalResp) {
-        this.errorCode = ApiErrorCode.FAILED;
+        this.errorCode = CommonErrorCode.FAILED;
         this.originalResp = originalResp;
         return this;
     }

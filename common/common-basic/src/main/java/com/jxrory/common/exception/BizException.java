@@ -1,5 +1,6 @@
-package com.jxrory.common.api;
+package com.jxrory.common.exception;
 
+import com.jxrory.common.api.IErrorCode;
 import lombok.Getter;
 
 /**

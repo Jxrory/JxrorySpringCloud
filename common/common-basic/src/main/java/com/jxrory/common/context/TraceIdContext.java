@@ -1,5 +1,6 @@
-package com.jxrory.common.utils;
+package com.jxrory.common.context;
 
+import cn.hutool.core.util.IdUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 
@@ -12,6 +13,16 @@ import org.slf4j.MDC;
 public class TraceIdContext {
 
     public static final String TRACE_ID_KEY = "RequestId";
+
+    /**
+     * new Trace Id
+     *
+     * @return trace id
+     */
+    public static String newTraceId() {
+        return IdUtil.getSnowflakeNextIdStr();
+    }
+
 
     /**
      * 设置 TraceId
