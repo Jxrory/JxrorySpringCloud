@@ -20,10 +20,13 @@
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <!-- Spring Cloud -->
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
-        <!-- Spring Alibaba Cloud-->
+        <!-- Spring Alibaba Cloud -->
         <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
         <fastjson.version>1.2.68</fastjson.version>
         <hutool.version>5.7.18</hutool.version>
+
+        <!-- Swagger -->
+        <knife4j.version>2.0.8</knife4j.version>
 
         <!-- Maven Plugin Versions -->
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -112,20 +115,17 @@
             </dependency>
 
             <!--swagger-->
+            <!-- swagger -->
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>2.9.2</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.9.2</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
-                <version>1.5.20</version>
+                <version>1.5.22</version>
+                <scope>compile</scope>
             </dependency>
 
             <!-- 公司内部包 -->
