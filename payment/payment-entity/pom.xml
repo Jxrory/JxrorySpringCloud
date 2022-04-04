@@ -28,5 +28,10 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.jxrory</groupId>
+            <artifactId>common-basic</artifactId>
+        </dependency>
     </dependencies>
 </project>

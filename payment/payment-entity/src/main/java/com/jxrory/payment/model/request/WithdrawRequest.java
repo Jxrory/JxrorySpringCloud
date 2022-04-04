@@ -1,12 +1,13 @@
 package com.jxrory.payment.model.request;
 
+import com.jxrory.common.entity.AmountEntity;
 import com.jxrory.payment.model.enums.WithdrawEntryTypeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
-import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
 
 /**
  * 提现请求参数
@@ -16,7 +17,7 @@ import java.math.BigDecimal;
  * @date 2022/03/27
  */
 @Data
-@ApiModel(description = "提现请求参数", value = "提现请求参数")
+@ApiModel(description = "提现请求参数")
 public class WithdrawRequest {
 
     @ApiModelProperty(name = "countryCode", value = "国家Code", required = true, example = "CN")
@@ -37,33 +38,21 @@ public class WithdrawRequest {
     /**
      * 提现多少钱
      */
-    @ApiModelProperty(name = "currency", required = true, value = "币种: ISO-4217", example = "CNY")
-    @NotBlank(message = "币种不能为空")
-    private String currency;
-
-    @ApiModelProperty(name = "amount", required = true, value = "金额, 使用基础单位: 元", example = "100.00")
-    private BigDecimal amount;
+    @ApiModelProperty(name = "amount", required = true, value = "提现金额")
+    @NotNull
+    private AmountEntity amount;
 
 
     /**
-     * 到什么地方去
+     * 到什么地方去: 收款人信息
      */
-    @ApiModelProperty(name = "accountNo", required = true, value = "银行卡号, wxpay-openID, alipay-登录账号", example = "\"1234567890\"")
-    private String accountNo;
-
-    @ApiModelProperty(name = "bankCode", value = "银行 code", example = "JH")
-    private String bankCode;
-
-    @ApiModelProperty(name = "accountName", value = "收款人姓名", example = "Rory")
-    private String accountName;
+    @ApiModelProperty(name = "recipient", required = true, value = "收款人信息")
+    private RecipientInfo recipient;
 
 
     /**
      * 其它
      */
-    @ApiModelProperty(name = "clientIp", value = "客户端Ip地址", example = "127.0.0.1")
-    private String clientIp = "";
-
     @ApiModelProperty(name = "comment", value = "备注, 默认: Withdraw", example = "Withdraw")
     private String comment = "Withdraw";
 
