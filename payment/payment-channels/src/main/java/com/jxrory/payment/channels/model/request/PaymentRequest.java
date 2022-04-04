@@ -16,7 +16,7 @@ public class PaymentRequest {
     /**
      * 订单号
      */
-    private String orderId;
+    private String orderNo;
 
     /**
      * 币种(ISO-4217 Code)

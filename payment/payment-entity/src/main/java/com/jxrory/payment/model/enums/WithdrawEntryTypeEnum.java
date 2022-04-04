@@ -12,6 +12,7 @@ import lombok.Getter;
 public enum WithdrawEntryTypeEnum {
     // 银行卡入账
     BANK_CARD("银行卡"),
+    WX("微信"),
     ;
 
     String detail;

@@ -1,5 +1,6 @@
 package com.jxrory.payment.model.request;
 
+import com.jxrory.payment.model.enums.WithdrawEntryTypeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -15,6 +16,9 @@ import javax.validation.constraints.NotBlank;
 @Data
 @ApiModel(description = "收款人信息, 根据渠道的不同, 要求填写的信息也是不同的")
 public class RecipientInfo {
+
+    @ApiModelProperty(name = "entryType", required = true, value = "入账方式", example = "BANK_CARD")
+    private WithdrawEntryTypeEnum entryType;
 
     @ApiModelProperty(name = "accountNo", required = true, value = "银行卡号, wxpay-openID, alipay-登录账号", example = "\"1234567890\"")
     @NotBlank

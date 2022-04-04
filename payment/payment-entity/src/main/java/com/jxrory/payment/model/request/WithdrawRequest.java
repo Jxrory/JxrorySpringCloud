@@ -1,7 +1,6 @@
 package com.jxrory.payment.model.request;
 
 import com.jxrory.common.entity.AmountEntity;
-import com.jxrory.payment.model.enums.WithdrawEntryTypeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -26,13 +25,6 @@ public class WithdrawRequest {
     @ApiModelProperty(name = "orderNo", required = true, value = "订单号", example = "Order_000000001")
     @NotBlank(message = "唯一订单号不能为空")
     private String orderNo;
-
-
-    /**
-     * 提现方式
-     */
-    @ApiModelProperty(name = "entryType", required = true, value = "入账方式", example = "BANK_CARD")
-    private WithdrawEntryTypeEnum entryType;
 
 
     /**
