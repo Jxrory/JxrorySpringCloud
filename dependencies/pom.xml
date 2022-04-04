@@ -179,6 +179,15 @@
                 <version>${jxrory-msg.version}</version>
                 <scope>compile</scope>
             </dependency>
+
+
+            <!-- 测试 -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>RELEASE</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
  * @date 2022/03/03
  */
 @Data
-@ApiModel(description = "手机号码", value = "手机号码")
+@ApiModel(description = "手机号码")
 public class PhoneNumber {
 
     /**
