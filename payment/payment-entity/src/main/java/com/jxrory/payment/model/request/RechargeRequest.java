@@ -19,9 +19,9 @@ import javax.validation.constraints.NotNull;
 @ApiModel(description = "充值请求参数", value = "充值请求参数")
 public class RechargeRequest {
 
-    @ApiModelProperty(name = "orderNo", required = true, value = "订单号", example = "Order_000000001")
-    @NotBlank(message = "唯一订单号不能为空")
-    private String orderNo;
+    @ApiModelProperty(name = "mchOrderNo", required = true, value = "订单号", example = "Order_000000001")
+    @NotBlank
+    private String mchOrderNo;
 
 
     /**

@@ -22,4 +22,12 @@ public class AmountEntity {
 
     @ApiModelProperty(name = "value", value = "金额", required = true, example = "100.00")
     private BigDecimal value;
+
+    public AmountEntity() {
+    }
+
+    public AmountEntity(String currency, BigDecimal value) {
+        this.currency = currency;
+        this.value = value;
+    }
 }

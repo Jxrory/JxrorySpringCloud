@@ -25,5 +25,10 @@
             <groupId>com.jxrory</groupId>
             <artifactId>common-basic</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.jxrory</groupId>
+            <artifactId>payment-entity</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

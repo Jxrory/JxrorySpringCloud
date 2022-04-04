@@ -1,8 +1,9 @@
 package com.jxrory.payment.channels;
 
+import com.jxrory.common.exception.BizException;
 import com.jxrory.payment.channels.model.ChannelResult;
 import com.jxrory.payment.channels.model.request.TransferRequest;
-import com.jxrory.payment.channels.model.vo.TransferVO;
+import com.jxrory.payment.channels.model.vo.TransferQueryVO;
 
 /**
  * 给用户打款(转账)
@@ -16,25 +17,45 @@ import com.jxrory.payment.channels.model.vo.TransferVO;
 public interface TransfersService {
 
     /**
-     * 前置检查
+     * 转账前置校验
+     *
+     * @param transferRequest 转账请求
+     * @return true | false
+     * @throws BizException 检查异常可以抛出 {@link BizException} 异常
+     */
+    Boolean preCheck(TransferRequest transferRequest) throws BizException;
+
+    /**
+     * 预转账处理, 可以返回异常, 代表划转失败
      *
      * @param transferRequest 订单信息
      * @return {@link ChannelResult<Object>}
+     * @throws BizException 检查异常可以抛出 {@link BizException} 异常
      */
-    ChannelResult<Object> preCheck(TransferRequest transferRequest);
+    ChannelResult<Object> preTransfer(TransferRequest transferRequest) throws BizException;
 
     /**
      * 划转
      *
      * @param transferRequest 划转请求参数
-     * @param checkResp       前置检查返回的结果
-     * @return res 划转结果
+     * @param preTransferResp 前置检查返回的结果
+     * @return 划转结果
      */
-    ChannelResult<TransferVO> transfer(TransferRequest transferRequest, ChannelResult<Object> checkResp);
+    ChannelResult<Object> transfer(TransferRequest transferRequest, ChannelResult<Object> preTransferResp);
 
-    // 查询
-    void queryTransferOrder();
+    /**
+     * 查询
+     *
+     * @param orderNo 订单号
+     * @return {@link TransferQueryVO}
+     */
+    TransferQueryVO queryTransferOrder(String orderNo);
 
-    // 回调解析器
-    void transfersCallbackParser();
+    /**
+     * 回调解析器
+     *
+     * @param orderInfo 订单信息
+     * @return {@link TransferQueryVO}
+     */
+    TransferQueryVO transfersCallbackParser(String orderInfo);
 }

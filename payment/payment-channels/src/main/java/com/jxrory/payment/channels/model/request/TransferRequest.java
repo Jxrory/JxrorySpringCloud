@@ -1,8 +1,9 @@
 package com.jxrory.payment.channels.model.request;
 
+import com.jxrory.common.entity.AmountEntity;
+import com.jxrory.payment.model.request.RecipientInfo;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -18,25 +19,15 @@ public class TransferRequest {
     private String orderNo;
 
     /**
-     * 币种(ISO-4217 Code)
+     * 金额
      */
-    private String currency;
-
-    /**
-     * 提现金额
-     */
-    private BigDecimal amount;
+    private AmountEntity amount;
 
     /**
      * 收款人信息
      * 包括用户名字, 联系方式, 银行账户, 等信息
      */
-    private Object to;
-
-    /**
-     * 扩展数据
-     */
-    private Object metaData;
+    private RecipientInfo recipient;
 
     /**
      * 转账备注

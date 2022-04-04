@@ -1,8 +1,8 @@
 package com.jxrory.payment.channels.model.request;
 
+import com.jxrory.common.entity.AmountEntity;
+import com.jxrory.payment.model.request.CustomerInfo;
 import lombok.Data;
-
-import java.math.BigDecimal;
 
 /**
  * 收款请求参数
@@ -16,20 +16,30 @@ public class PaymentRequest {
     /**
      * 订单号
      */
-    private String orderNo;
+    private String orderId;
 
     /**
-     * 币种(ISO-4217 Code)
+     * 金额
      */
-    private String currency;
+    private AmountEntity amount;
 
     /**
-     * 金额, 币种的基础单位(元)
+     * 备注
      */
-    private BigDecimal amount;
+    private String comment;
+
+    /**
+     * 渠道扩展数据, json 格式字符串
+     */
+    private String channelExt = "";
 
     /**
      * 回调 URL
      */
     private String callbackUrl;
+
+    /**
+     * 客户信息
+     */
+    private CustomerInfo customer;
 }

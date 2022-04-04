@@ -22,9 +22,9 @@ public class WithdrawRequest {
     @ApiModelProperty(name = "countryCode", value = "国家Code", required = true, example = "CN")
     private String countryCode;
 
-    @ApiModelProperty(name = "orderNo", required = true, value = "订单号", example = "Order_000000001")
-    @NotBlank(message = "唯一订单号不能为空")
-    private String orderNo;
+    @ApiModelProperty(name = "mchOrderNo", required = true, value = "订单号", example = "Order_000000001")
+    @NotBlank
+    private String mchOrderNo;
 
 
     /**

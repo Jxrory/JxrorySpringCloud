@@ -180,6 +180,13 @@
                 <scope>compile</scope>
             </dependency>
 
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>payment-entity</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <scope>compile</scope>
+            </dependency>
+
 
             <!-- 测试 -->
             <dependency>
