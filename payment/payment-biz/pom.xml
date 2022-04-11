@@ -13,6 +13,24 @@
     <version>0.0.1-SNAPSHOT</version>
     <description>支付微服务Biz</description>
 
+    <properties>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+    </properties>
+
     <dependencies>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>migration</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

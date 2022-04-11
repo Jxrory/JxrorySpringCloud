@@ -24,6 +24,7 @@
         <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
         <fastjson.version>1.2.68</fastjson.version>
         <hutool.version>5.7.18</hutool.version>
+        <mysql-connector.version>8.0.25</mysql-connector.version>
 
         <!-- Swagger -->
         <knife4j.version>2.0.8</knife4j.version>
@@ -33,6 +34,8 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <spring-boot-maven-plugin.version>2.2.6.RELEASE</spring-boot-maven-plugin.version>
+        <!--Liquibase数据库版本更新工具-->
+        <liquibase.version>4.9.1</liquibase.version>
 
         <!-- 内部开发的包 -->
         <jxrory-user.version>0.0.1-SNAPSHOT</jxrory-user.version>
@@ -291,6 +294,46 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-maven-plugin</artifactId>
+                    <version>${liquibase.version}</version>
+
+                    <!-- 规范 migration 的一些配置 -->
+                    <configuration>
+                        <!-- 变更日志 changelog 的路径 -->
+                        <changeLogFile>${project.basedir}/src/main/resources/liquibase/master.xml</changeLogFile>
+
+                        <!-- 生成的两个库之间不同内容的xml文件的路径 -->
+                        <diffChangeLogFile>
+                            ${project.basedir}/src/main/resources/liquibase/changelog/${maven.build.timestamp}_changelog.mysql.sql
+                        </diffChangeLogFile>
+
+                        <!-- 通过liquibase:generateChangeLog命令生成所连接的数据库的对应changelog文件,可根据文件后缀名生成liquibase changelog支持的四种格式:xml sql json以及yml -->
+                        <!-- 生成sql的时候需要指定对应类型的数据库 -->
+                        <outputChangeLogFile>
+                            ${project.basedir}/src/main/resources/liquibase/changelog/${maven.build.timestamp}_changelog.mysql.sql
+                        </outputChangeLogFile>
+
+                        <propertyFile>
+                            ${project.basedir}/src/main/resources/liquibase/migration-${profile.active}.properties
+                        </propertyFile>
+                    </configuration>
+
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.liquibase</groupId>
+                            <artifactId>liquibase-core</artifactId>
+                            <version>${liquibase.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql-connector.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
