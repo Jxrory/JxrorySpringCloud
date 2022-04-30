@@ -7,13 +7,11 @@
     <parent>
         <groupId>com.jxrory</groupId>
         <artifactId>dependencies</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
         <relativePath>dependencies/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.jxrory</groupId>
     <artifactId>jxrory-cloud</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>jxrory cloud</description>
     <packaging>pom</packaging>
@@ -21,6 +19,7 @@
     <modules>
         <module>gateway</module>
         <module>common</module>
+        <module>jxrory-components</module>
         <module>user</module>
         <module>order</module>
         <module>msg</module>

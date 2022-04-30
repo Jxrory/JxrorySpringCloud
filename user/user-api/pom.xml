@@ -1,18 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <parent>
-    <artifactId>user</artifactId>
-    <groupId>com.jxrory</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>..</relativePath>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jxrory</groupId>
+        <artifactId>user</artifactId>
+        <version>${revision}</version>
+        <relativePath>..</relativePath>
+    </parent>
 
-  <artifactId>user-api</artifactId>
-  <name>${project.artifactId}</name>
-  <version>0.0.1-SNAPSHOT</version>
-  <description>用户微服务Api</description>
+    <artifactId>user-api</artifactId>
+    <name>${project.artifactId}</name>
+    <description>用户微服务Api</description>
 
-  <dependencies>
-  </dependencies>
+    <dependencies>
+    </dependencies>
 </project>
