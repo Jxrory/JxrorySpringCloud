@@ -24,6 +24,7 @@
         <module>order</module>
         <module>msg</module>
         <module>payment</module>
+        <module>oss</module>
     </modules>
 
     <dependencies>

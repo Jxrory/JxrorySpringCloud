@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jxrory</groupId>
-        <artifactId>user</artifactId>
+        <artifactId>order</artifactId>
         <version>${revision}</version>
         <relativePath>..</relativePath>
     </parent>

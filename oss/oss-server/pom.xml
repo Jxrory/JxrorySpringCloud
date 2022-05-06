@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jxrory</groupId>
-        <artifactId>jxrory-oss</artifactId>
+        <artifactId>oss</artifactId>
         <version>${revision}</version>
         <relativePath>..</relativePath>
     </parent>
 
     <artifactId>oss-server</artifactId>
     <name>${project.artifactId}</name>
-    <description>jxrory oss server</description>
+    <description>oss server</description>
 
     <dependencies>
         <dependency>
@@ -20,12 +20,6 @@
         <dependency>
             <groupId>com.jxrory</groupId>
             <artifactId>oss-service</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.jxrory</groupId>
-            <artifactId>common-components</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

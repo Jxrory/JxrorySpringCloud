@@ -29,3 +29,6 @@ dist/
 nbdist/
 .nb-gradle/
 generatorConfig.xml
+
+### file ###
+.flattened-pom.xml
