@@ -17,5 +17,6 @@
 
     <modules>
         <module>jxrory-swagger</module>
+        <module>jxrory-oss</module>
     </modules>
 </project>

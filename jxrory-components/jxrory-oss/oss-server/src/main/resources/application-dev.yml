@@ -1,0 +1,13 @@
+oss:
+  controller:
+    enable: true
+  local:
+    enable: true
+    path: /Users/jxrory/Data/tmp
+    http-url:
+
+# swagger 配置
+swagger:
+  enable: true
+  title: Jxrory Oss Docs
+  group: Jxrory-Components

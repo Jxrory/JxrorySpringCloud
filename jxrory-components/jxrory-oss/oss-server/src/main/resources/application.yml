@@ -1,0 +1,16 @@
+server:
+  port: 1677 # 九宫格: oss server -> [oss] 1677
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: @project.name@
+  profiles:
+    active: @profile.active@
+
+# 日志配置
+log:
+  file:
+    # 日志存储根目录
+    path: ./logs

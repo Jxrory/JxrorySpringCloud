@@ -40,9 +40,10 @@
         <liquibase.version>4.9.1</liquibase.version>
 
         <!-- 内部开发的包 -->
-        <jxrory-user.version>0.0.1-SNAPSHOT</jxrory-user.version>
-        <jxrory-msg.version>0.0.1-SNAPSHOT</jxrory-msg.version>
-        <jxrory-common.version>0.0.1-SNAPSHOT</jxrory-common.version>
+        <jxrory-user.version>${revision}</jxrory-user.version>
+        <jxrory-msg.version>${revision}</jxrory-msg.version>
+        <jxrory-common.version>${revision}</jxrory-common.version>
+        <jxrory-oss.version>${revision}</jxrory-oss.version>
     </properties>
 
     <dependencyManagement>
@@ -119,6 +120,13 @@
                 <version>8.9.9</version>
             </dependency>
 
+            <!--      阿里 oss 云存储 sdk      -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>3.14.0</version>
+            </dependency>
+
             <!--swagger-->
             <!-- swagger -->
             <dependency>
@@ -192,6 +200,12 @@
                 <scope>compile</scope>
             </dependency>
 
+            <!-- jxrory oss -->
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>oss-service</artifactId>
+                <version>${jxrory-oss.version}</version>
+            </dependency>
 
             <!-- 测试 -->
             <dependency>
