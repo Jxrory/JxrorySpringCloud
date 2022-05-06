@@ -21,6 +21,11 @@
             <groupId>com.jxrory</groupId>
             <artifactId>oss-service</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.jxrory</groupId>
+            <artifactId>swagger</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

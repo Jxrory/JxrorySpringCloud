@@ -43,6 +43,7 @@
         <jxrory-user.version>${revision}</jxrory-user.version>
         <jxrory-msg.version>${revision}</jxrory-msg.version>
         <jxrory-common.version>${revision}</jxrory-common.version>
+        <jxrory-components.version>${revision}</jxrory-components.version>
         <jxrory-oss.version>${revision}</jxrory-oss.version>
     </properties>
 
@@ -153,6 +154,18 @@
                 <artifactId>common-basic</artifactId>
                 <version>${jxrory-common.version}</version>
                 <scope>compile</scope>
+            </dependency>
+
+            <!-- components -->
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>components</artifactId>
+                <version>${jxrory-components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jxrory</groupId>
+                <artifactId>swagger</artifactId>
+                <version>${jxrory-components.version}</version>
             </dependency>
 
             <dependency>

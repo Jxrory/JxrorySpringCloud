@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jxrory</groupId>
-        <artifactId>jxrory-components</artifactId>
+        <artifactId>components</artifactId>
         <version>${revision}</version>
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>jxrory-swagger</artifactId>
+    <artifactId>swagger</artifactId>
     <name>${project.artifactId}</name>
-    <description>jxrory swagger</description>
+    <description>swagger</description>
 
     <dependencies>
         <dependency>

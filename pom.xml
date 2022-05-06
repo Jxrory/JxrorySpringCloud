@@ -19,7 +19,7 @@
     <modules>
         <module>gateway</module>
         <module>common</module>
-        <module>jxrory-components</module>
+        <module>components</module>
         <module>user</module>
         <module>order</module>
         <module>msg</module>

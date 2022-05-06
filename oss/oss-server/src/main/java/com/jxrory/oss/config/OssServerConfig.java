@@ -1,8 +1,7 @@
 package com.jxrory.oss.config;
 
 
-//import com.jxrory.common.components.cors.anantation.EnableCors;
-//import com.jxrory.common.components.swagger.anantation.EnableSwagger2;
+import com.jxrory.components.swagger.anantation.EnableSwagger;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022-04-13
  */
 @Configuration
-//@EnableSwagger2
-//@EnableCors
+@EnableSwagger
 public class OssServerConfig {
 }

@@ -10,12 +10,12 @@
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>jxrory-components</artifactId>
+    <artifactId>components</artifactId>
     <name>${project.artifactId}</name>
     <description>通用组件</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>jxrory-swagger</module>
+        <module>swagger</module>
     </modules>
 </project>
