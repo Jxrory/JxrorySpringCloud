@@ -40,7 +40,7 @@
         </layout>
     </appender>
 
-    <logger name="com.quantum" level="DEBUG"/>
+    <logger name="com.jxrory" level="DEBUG"/>
 
     <root level="INFO">
         <appender-ref ref="INFO_FILE"/>

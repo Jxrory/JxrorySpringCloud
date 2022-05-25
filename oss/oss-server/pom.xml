@@ -14,8 +14,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.jxrory</groupId>
+            <artifactId>web-basic</artifactId>
         </dependency>
         <dependency>
             <groupId>com.jxrory</groupId>
